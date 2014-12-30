@@ -29,13 +29,14 @@ public:
 				return true;
 			}
 
-			int max_value = x / std::pow(10, max_digit - 1);
+			int power = std::pow(10, max_digit - 1);
+			int max_value = x / power;
 			int min_value = x % 10;
 			if (max_value != min_value)
 			{
 				return false;
 			}
-			x = (x - max_value * std::pow(10, max_digit - 1)) / 10;
+			x = (x - max_value * power) / 10;
 			max_digit -= 2;
 		}
 		return true;
